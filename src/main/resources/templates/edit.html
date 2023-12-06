@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit by id</title>
+    <link th:href="@{/css/styles.css}" rel="stylesheet"  />
+
+</head>
+<body>
+
+<div class="desk">
+    <div class="desk_title">
+        <h2 class="desk_title_text">Edit notes by id</h2>
+    </div>
+
+    <div class="form">
+        <form action="/note/edit" method="POST">
+            <div >
+                <label for="id" >ID: </label>
+                <input type="text" name="id" id="id" th:value="${notes.id}">
+                <label for="title">Title: </label>
+                <input type="text" name="title" id="title" th:value="${notes.title}">
+            </div>
+
+            <div >
+                <label for="content">Content: </label>
+                <input class="content-view" type="text" name="edit-content" id="content" th:value="${notes.content}">
+            </div>
+
+            <form action="/note/edit" method="POST">
+                <button  type="submit">Edit </button>
+            </form>
+        </form>
+
+    </div>
+
+    <div class="bottom-button">
+        <a href="http://localhost:8080/note/list">
+            <button type="button">Back</button>
+        </a>
+    </div>
+
+</div>
+
+</body>
+</html>

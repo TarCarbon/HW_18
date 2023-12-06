@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <title>Notes</title>
+    <link th:href="@{/css/styles.css}" rel="stylesheet"  />
+</head>
+<body>
+
+	<div class="desk">
+		<div class="desk_title">
+			<h2 class="desk_title_text">Notes</h2>
+		</div>
+
+
+		<ul >
+			<li class="list" th:each="note:${nt}">
+				<span th:text="${note.id} + ."></span>
+				<samp th:text="${note.title}"></samp>
+				<blockquote><samp class="content" th:text="${note.content}"></samp>
+				</blockquote>
+				<form th:action="@{delete?id={id}(id=${note.id})}" method="POST">
+					<button class="btn btn-delete" type="submit">Delete</button>
+				</form>
+
+				<a th:href="@{edit?id={id}(id=${note.id})}">
+					<button class="btn btn-edit" type="submit">Edit</button>
+				</a>
+			</li>
+		</ul>
+    </div>
+
+	<div class="bottom-button">
+		<a href="http://localhost:8080/note/delete">
+			<button type="button">DeleteById</button>
+		</a>
+	</div>
+
+
+
+</body>
+</html>
