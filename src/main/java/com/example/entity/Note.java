@@ -13,5 +13,5 @@ public class Note {
     @Column
     private String title;
     @Column
-    private String context;
+    private String content;
 }

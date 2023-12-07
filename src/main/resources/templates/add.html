@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Edit by id</title>
+    <title>Add new note</title>
     <link th:href="@{/css/styles.css}" rel="stylesheet"  />
 
 </head>
@@ -16,14 +16,13 @@
     <div class="form">
         <form action="/note/edit" method="POST">
             <div >
-                <input type="hidden" name="id" id="id" th:value="${notes.id}">
                 <label for="title">Title: </label>
-                <input type="text" name="title" id="title" th:value="${notes.title}">
+                <input type="text" name="title" id="title">
             </div>
 
             <div >
                 <label for="content">Content: </label>
-                <input class="content-view" type="text" name="content" id="content" th:value="${notes.content}">
+                <input class="content-view" type="text" name="content" id="content">
             </div>
 
             <form action="/note/edit" method="POST">

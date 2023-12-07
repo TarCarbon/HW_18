@@ -15,7 +15,7 @@
 
 		<ul >
 			<li class="list" th:each="note:${nt}">
-				<span th:text="${note.id} + ."></span>
+
 				<samp th:text="${note.title}"></samp>
 				<blockquote><samp class="content" th:text="${note.content}"></samp>
 				</blockquote>
@@ -31,7 +31,10 @@
     </div>
 
 	<div class="bottom-button">
-		<a href="http://localhost:8080/note/delete">
+		<a href="http://localhost:9999/note/add">
+			<button type="button">Add note</button>
+		</a>
+		<a href="http://localhost:9999/note/delete">
 			<button type="button">DeleteById</button>
 		</a>
 	</div>

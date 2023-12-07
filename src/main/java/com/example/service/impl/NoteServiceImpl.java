@@ -11,31 +11,31 @@ import java.util.List;
 @RequiredArgsConstructor
 @Service
 public class NoteServiceImpl implements NoteService<Note> {
-    private final NoteRepository noteRepository;
 
+    private final NoteRepository noteRepository;
 
     @Override
     public List<Note> listAll() {
-        return null;
+        return noteRepository.findAll();
     }
 
     @Override
     public void add(Note note) {
-
+        noteRepository.save(note);
     }
 
     @Override
     public void deleteById(Long id) {
-
+        noteRepository.deleteById(id);
     }
 
     @Override
     public void update(Note note) {
-
+        noteRepository.save(note);
     }
 
     @Override
     public Note getById(Long id) {
-        return null;
+        return noteRepository.getReferenceById(id);
     }
 }
