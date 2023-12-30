@@ -9,7 +9,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class MvcConfig implements WebMvcConfigurer {
 
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/").setViewName("note/list");
         registry.addViewController("/note/list").setViewName("list");
         registry.addViewController("/note/delete").setViewName("delete");
         registry.addViewController("/note/edit").setViewName("edit");

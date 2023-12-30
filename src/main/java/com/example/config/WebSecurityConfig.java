@@ -39,6 +39,7 @@ public class WebSecurityConfig {
         http.cors(withDefaults())
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests((request) -> request
+                        .requestMatchers("/login", "/css/**").permitAll()
                         .anyRequest().authenticated())
                 .authenticationManager(authenticationManager)
                 .formLogin((form) -> form
